@@ -24,7 +24,7 @@ Solutions for `a -> a`
 I have found 25 solutions of type `a -> b -> c -> ... -> a`  
 I have only discovered 6 distinct loops.
 The numbers below are the smallest such numbers.  
-A 26th solution (or 7th loop) would be greater than `10^24`, if it exists
+A 26th solution (or 7th loop) would be greater than `10^27`, if it exists
 
 Solutions for `a -> b -> c -> ... -> a`  
  168, 175, 420, 441, 525, 588, 672, 840, 10584, 16128, 35280, 24192, 72576, 98784, 201600, 10668672, 22226400, 38896200, 1170993438720, 5576159232000, 85384938240000, 204923851776000, 1874561426506137600000, 2624385997108592640000, 22494737118073651200000
