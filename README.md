@@ -21,9 +21,9 @@ Let's try another:
 18 = eighteen, has 8 letters  
 etc.
 
-**Tricky Rules**
-Notice that we don't count spaces or hyphens as letters.  
-Notice that we never say 'one hundred **and** one'
+**Tricky Rules**  
+1. Notice that we don't count spaces or hyphens as letters.  
+2. Notice that we never say 'one hundred **and** one'
 
 It has been proven that every number will always trace back to 4.
 
