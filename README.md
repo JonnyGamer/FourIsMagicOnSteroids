@@ -53,6 +53,6 @@ Which numbers, when we start with `a` will also end in `a`?
 
 ## Spoilers
 
-You can find code for solutions for `a -> a` in Python here.
-You can read about more spoilers here.
+You can find code for solutions for `a -> a` in Python [here](\main.py).
+You can read about more spoilers [here](\spoilers.md).
 
