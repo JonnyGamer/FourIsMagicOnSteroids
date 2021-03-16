@@ -1,5 +1,9 @@
 # This Python Program finds solutions for A058230
 
+# These are chached values for word lengths of million, billion, trillion, quadrillion.
+# Or [7, 7, 8, 11, 11, ...]
+# You may notice that this array is actually 2 less than these values, starting at index = 1.
+# I will refer to these values in the `def illion(n)` function
 magic = [
 5, 5, 5, 6, 9, 9, 8, 8, 7, 7, 7, 9, 10, 10, 15, 11, 9, 13, 11, 12, 10, 12, 13, 14, 18, 14, 13, 16, 14, 15,
 11, 13, 14, 15, 19, 15, 14, 17, 15, 16, 14, 16, 17, 18, 22, 18, 17, 20, 18, 19, 15, 17, 18, 19, 23, 19, 18, 21, 19, 20,
@@ -37,6 +41,9 @@ magic = [
 20, 22, 23, 24, 28, 24, 23, 26, 24, 25, 10
 ]
 
+# These are the cached values for 0 - 999.
+# So threeDigit[1] = 3; because 1 -> one = 3
+# And threeDigit[999] = 672; because 999 -> nine hundred nintey-nine = 4*7*6*4 = 672
 threeDigit = [
 -1, 3, 3, 5, 4, 4, 3, 5, 5, 4, 3, 6, 6, 8, 8, 7, 7, 9, 8, 8, 6, 18, 18, 30, 24, 24, 18, 30, 30, 24, 6, 18, 18, 30, 24, 24,
 18, 30, 30, 24, 5, 15, 15, 25, 20, 20, 15, 25, 25, 20, 5, 15, 15, 25, 20, 20, 15, 25, 25, 20, 5, 15, 15, 25, 20, 20, 15, 25,
@@ -138,7 +145,7 @@ def findNewTreble(copyTreble, illionValue):
             val = illionValue * i * j
             newVal = fourFour(val)
             if val == newVal and val not in found:
-                print("Found solution:", val)
+                print(str(val) + ",")
                 found.append(val)
             newTrebles.add(newVal)
     return newTrebles
@@ -146,11 +153,11 @@ def findNewTreble(copyTreble, illionValue):
 i = 1
 while True:
     copyTreble = findNewTreble(copyTreble, illions[i])
-    print("")
-    print(len(copyTreble), "cached numbers exist.")
-    print("No more solutions less than 10 ^", 3 * i + 3)
-    print("")
+    # print("")
+    # print(len(copyTreble), "cached numbers exist.")
+    # print("No more solutions less than 10 ^", 3 * i + 3)
+    # print("")
     i += 1
 
 # I ran this program until it printed: No more solutions less than 10 ^138 exist.
-# It found the solutions A058230(1) through A058230(10)
+# It found the solutions A058230(1) through A058230(9)
