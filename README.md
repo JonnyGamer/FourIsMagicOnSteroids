@@ -1,5 +1,6 @@
 # FourIsMagicOnSteroids
-Four is magic, but on steroids
+Four is magic, but on steroids  
+Fortuitous Numbers
 
 ## What is the game commonly called `Four is magic`?
 
@@ -42,7 +43,7 @@ So when we multiply the word lengths together, numbers don't always have to trac
 ## The Question:
 Are there any other numbers that end somewhere else?
 
-We are looking for every number of type:
+We are looking for every number of type:  
 `a -> a`  
 or
 `a -> b -> c -> ... -> a`
