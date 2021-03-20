@@ -100,8 +100,7 @@ def fourFour(n):
     b = [x for x in b if x > 0]
     return reduce(lambda x, y: x*y, b)
 
-treble = {1, 3, 4, 5, 6, 7, 8, 9, 15, 18, 20, 21, 24, 25, 28, 30, 35, 63, 84, 105, 112, 126, 140, 147, 168, 175, 189, 196, 210, 224, 245, 252, 280, 315, 378, 420, 441, 504, 525, 560, 588, 630, 672, 700, 735, 784, 840, 875, 980, 1050, 1225}
-
+treble = set(threeDigit) - {-1}
 copyTreble = {1}
 
 found = []
@@ -117,8 +116,8 @@ def findNewTreble(copyTreble, illionValue):
 i = -1
 while True:
     copyTreble = findNewTreble(copyTreble, illion(i))
-    powo = pow(10, (i + 1) * 3 + 3)
-    uowo = pow(10, (i) * 3 + 3)
-    founder = filter(lambda p: p > uowo and p < powo and p == fourFour(p) and p not in found, copyTreble)
+    upper = pow(10, (i + 1) * 3 + 3)
+    lower = pow(10, (i) * 3 + 3)
+    founder = filter(lambda p: p > lower and p < upper and p == fourFour(p) and p not in found, copyTreble)
     f = [print(str(k) + ",") for k in sorted(founder)]
     i += 1
