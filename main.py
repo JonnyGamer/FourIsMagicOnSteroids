@@ -100,64 +100,25 @@ def fourFour(n):
     b = [x for x in b if x > 0]
     return reduce(lambda x, y: x*y, b)
 
-# Extra Credit
-def fourFourLoop(n):
-    a = []
-    while n not in a:
-        a.append(n)
-        n = fourFour(n)
-    return n
+treble = {1, 3, 4, 5, 6, 7, 8, 9, 15, 18, 20, 21, 24, 25, 28, 30, 35, 63, 84, 105, 112, 126, 140, 147, 168, 175, 189, 196, 210, 224, 245, 252, 280, 315, 378, 420, 441, 504, 525, 560, 588, 630, 672, 700, 735, 784, 840, 875, 980, 1050, 1225}
 
-# Tests should all print True
-print(4 == fourFour(4))
-print(24 == fourFour(24))
-print(84672 == fourFour(84672))
-print(1852200 == fourFour(1852200))
-print(829785600 == fourFour(829785600))
-print(20910597120 == fourFour(20910597120))
-print(92215733299200 == fourFour(92215733299200))
-print(1239789303244800000 == fourFour(1239789303244800000))
-print(887165996513213819259682435576627200000000 == fourFour(887165996513213819259682435576627200000000))
-
-##########################################
-# The code below searches for solutions: #
-##########################################
-
-# This function basically turns my `threeDigit` list into a set
-def generateTreble():
-    t = set()
-    for i in range(1, 1000):
-        t.add(fourFour(i))
-    return t
-  
-treble = generateTreble()
-# Should be equal to this: {1, 3, 4, 5, 6, 7, 8, 9, 15, 18, 20, 21, 24, 25, 28, 30, 35, 63, 84, 105, 112, 126, 140, 147, 168, 175, 189, 196, 210, 224, 245, 252, 280, 315, 378, 420, 441, 504, 525, 560, 588, 630, 672, 700, 735, 784, 840, 875, 980, 1050, 1225}
-
-copyTreble = set(treble)
-print(len(copyTreble))
+copyTreble = {1}
 
 found = []
 
 def findNewTreble(copyTreble, illionValue):
-    newTrebles = set(copyTreble)
+    q = set()
     for i in treble:
-        for j in copyTreble:
-            val = illionValue * i * j
-            newVal = fourFour(val)
-            if val == newVal and val not in found:
-                print(str(val) + ",")
-                found.append(val)
-            newTrebles.add(newVal)
-    return newTrebles
+        m = i * illionValue
+        if i == 1: m = i
+        q = q.union(set([m * j for j in copyTreble]))
+    return sorted(q)
 
-i = 1
+i = -1
 while True:
-    copyTreble = findNewTreble(copyTreble, illions[i])
-    # print("")
-    # print(len(copyTreble), "cached numbers exist.")
-    # print("No more solutions less than 10 ^", 3 * i + 3)
-    # print("")
+    copyTreble = findNewTreble(copyTreble, illion(i))
+    powo = pow(10, (i + 1) * 3 + 3)
+    uowo = pow(10, (i) * 3 + 3)
+    founder = filter(lambda p: p > uowo and p < powo and p == fourFour(p) and p not in found, copyTreble)
+    f = [print(str(k) + ",") for k in sorted(founder)]
     i += 1
-
-# I ran this program until it printed: No more solutions less than 10 ^138 exist.
-# It found the solutions A058230(1) through A058230(9)
