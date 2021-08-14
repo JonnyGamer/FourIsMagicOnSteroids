@@ -4,7 +4,7 @@ Are you sure you want to read this?
 ---
 ### MAJOR SPOILER IN LINK: What am I to do with these numbers?
 I found an entry from [The On-Line Encyclopedia of Integer Sequences](https://oeis.org/) aka OEIS  
-The sequence is [A058230](https://oeis.org/draft/A058230)  
+The sequence is [A058230](https://oeis.org/A058230)  
 The sequence is described as
 > Numbers k such that the product of the lengths of the words in the name of k in American English is equal to k.
 
